@@ -1,7 +1,14 @@
-* `ssh-keygen -t rsa -b 4096 -N '' -f ./confs/ssh-chat-key`
+## ssh-chat in docker
 
-* `docker-compose build`
+Docker version of the [ssh-chat](https://github.com/shazow/ssh-chat)
 
-* `docker-compose up -d`
+### Requirements
 
-* `ssh NICK@localhost -p 2022`
+- Docker
+- docker-compose
+
+### Usage
+
+```shell
+$ ./start
+```
