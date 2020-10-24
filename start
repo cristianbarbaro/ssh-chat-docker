@@ -3,6 +3,8 @@
 echo "Gennerating SSH key..."
 yes n | ssh-keygen -t rsa -b 4096 -N '' -f ./confs/ssh-chat-key
 
+touch admins
+
 docker-compose build
 
 docker-compose up -d
