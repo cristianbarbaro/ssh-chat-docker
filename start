@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Gennerating SSH key..."
+yes n | ssh-keygen -t rsa -b 4096 -N '' -f ./confs/ssh-chat-key
+
+docker-compose build
+
+docker-compose up -d
+
+read -p "Enter your name [$USER]: " user_name
+user_name=${name:-$USER}
+
+ssh $user_name@localhost -p 2022
