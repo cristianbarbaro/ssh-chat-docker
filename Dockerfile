@@ -9,9 +9,12 @@ RUN wget -nv https://github.com/shazow/ssh-chat/releases/download/v1.10/ssh-chat
     && ln -sf /opt/ssh-chat/ssh-chat /usr/local/bin/ssh-chat 
 
 RUN mkdir -p /root/.ssh
-
 COPY ./confs/ssh-chat-key /root/.ssh/id_rsa
+
+# create an empty file to avoid start failure
+RUN  touch /root/admins
+COPY ./admins /root/
 
 EXPOSE 2022
 
-CMD ["/usr/local/bin/ssh-chat"]
+CMD ["/usr/local/bin/ssh-chat", "--admin=/root/admins"]
