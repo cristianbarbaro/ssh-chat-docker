@@ -1,7 +1,6 @@
-FROM ubuntu:20.04
+FROM alpine:3
 
-RUN apt-get update && apt-get -y install \
-    wget
+RUN apk add wget
 
 #Install https://github.com/shazow/ssh-chat/releases
 RUN wget -nv https://github.com/shazow/ssh-chat/releases/download/v1.10/ssh-chat-linux_amd64.tgz \
