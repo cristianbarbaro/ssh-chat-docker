@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Gennerating SSH key..."
+echo "Generating SSH key..."
 yes n | ssh-keygen -t rsa -b 4096 -N '' -f ./confs/ssh-chat-key
 
 touch admins
